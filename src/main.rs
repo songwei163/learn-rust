@@ -19,11 +19,29 @@ fn main() {
     // test11();
     // test12();
     // test13();
-    test14();
+    // test14();
+    test15();
 }
 
+// 所有权与函数
+// https://www.bilibili.com/video/BV1hp4y1k7SV?p=17&spm_id_from=pageDriver&vd_source=4e596b40d4a4d41673da5c9dd4195a21
+fn test15() {}
+
 // https://www.bilibili.com/video/BV1hp4y1k7SV?p=15&spm_id_from=pageDriver&vd_source=4e596b40d4a4d41673da5c9dd4195a21
-fn test14() {}
+fn _test14() {
+    let _str = "hello, world".to_string();
+    // String
+    // &str
+    let mut str = String::from("hello");
+    str.push_str(", world");
+
+    println!("{}", str);
+    // drop()
+    // move
+    let str1 = str;
+    println!("-> {}", str1);
+    // println!("-> {}", str); // error borrow of moved value: "str" value borrowed here after move
+}
 
 fn _test13() {
     let arr = [1, 2, 3, 4, 5];
